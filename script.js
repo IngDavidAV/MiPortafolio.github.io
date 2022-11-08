@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Desarrollo de Software", "Ciberseguridad", "Redes de Internet", "Machine Learning", "Servicios AWS"], 
+        strings: ["Desarrollo de Software", "Ciberseguridad", "Redes de Internet", "Machine Learning", "Data Science", "Servicios AWS"], 
         typeSpeed: 100,
         backSpeed: 60,
         loop: true

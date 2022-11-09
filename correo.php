@@ -23,6 +23,6 @@ $para = "davidav.dev@gmail.com";
 $asunto = "Asunto del mensaje";
 
 mail($para, $asunto, utf8_decode($message), $header);
-header("location:gracias.html");
+header("location:index.html");
 
 ?>

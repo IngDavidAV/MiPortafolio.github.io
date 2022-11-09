@@ -19,10 +19,10 @@ $message .= "Mensaje".$_POST["mensaje"]."\r\n";
 $message .= "Enviado el: ".date('d/m/Y', time());
 
 
-$para = "davidav.dev@gmail.com";
-$asunto = "Asunto del mensaje";
+$para = 'davidav.dev@gmail.com';
+$asunto = 'Asunto del mensaje';
 
 mail($para, $asunto, utf8_decode($message), $header);
-header("location:index.html");
+header("Location:gracias.html");
 
 ?>

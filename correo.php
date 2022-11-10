@@ -1,28 +1,17 @@
 <?php 
 
+$destinatario = 'davidav.dev@gmail.com'; //Correo que recibe el mensaje
 $nombre = $_POST['name'];
 $phone = $_POST['phone'];
-$email = $_POST['email'];
-$consulta = $_POST['consulta'];
+$asunto = $_POST['asunto'];
 $mensaje = $_POST['mensaje'];
+$email = $_POST['email'];
 
-$header = 'From'.$email."\r\n";
-$header .= "X-Mailer: PHP/".phpversion()."\r\n";
-$header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
+$header = "Enviado desde Portafolio David Avalos por: " . $email;
 
-$message = "Mensaje enviado por: ".$nombre."\r\n";
-$message .= "Teléfono de Contacto: ".$phone."\r\n";
-$message .= "Correo: ".$email."\r\n";
-$message .= "Consulta".$consulta."\r\n";
-$message .= "Mensaje".$_POST['mensaje']."\r\n";
-$message .= "Enviado el: ".date('d/m/Y', time());
+$mensajeCompleto = $mensaje . "\nAtentamente: " . $nombre . "\nTelefono: " . $phone;
 
-
-$para = 'davidav.dev@gmail.com';
-$asunto = 'Mensaje de mi Portafolio';
-
-mail($para, $asunto, utf8_decode($message), $header);
-header("Location:gracias.html");
-
+mail($destinatario, $asunto, $mensajeCompleto, $header);
+echo "<script>('Correo enviado exitosamente')</script>";
+echo "<script>setTimeout(\"location.href='index.html'\",1000)</script>";
 ?>
